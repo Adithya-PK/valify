@@ -31,20 +31,19 @@ A simple FastAPI project with custom input validation (email, phone, password), 
 
 ## 🔎 How to Check Data
 
-Users Table:
+1. Users Table:
       - SELECT * FROM users;
 
-Validation & DB Logs Table:
+3. Validation & DB Logs Table:
       - SELECT * FROM logs;
 
 
 ## 🧾 File Structure (Quick Guide)
 
-main.py -	App startup, routing, and decorators usage
-validators.py	- Custom email, phone, and password checks
-db.py	- Save users and log to DB
-models.py	- SQLAlchemy models for User and Log
-database.py	- PostgreSQL connection setup
-requirements.txt - Project dependencies
-
----
+- main.py -	App startup, routing, and decorators usage
+- validators.py	- Custom email, phone, and password checks
+- db.py	- Save users and log to DB
+- models.py	- SQLAlchemy models for User and Log
+- database.py	- PostgreSQL connection setup
+- requirements.txt - Project dependencies
+  
