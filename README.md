@@ -40,10 +40,11 @@ A simple FastAPI project with custom input validation (email, phone, password), 
 
 ## 🧾 File Structure (Quick Guide)
 
-- main.py -	App startup, routing, and decorators usage
-- validators.py	- Custom email, phone, and password checks
-- db.py	- Save users and log to DB
-- models.py	- SQLAlchemy models for User and Log
-- database.py	- PostgreSQL connection setup
-- requirements.txt - Project dependencies
-  
+- main.py – App startup, route definitions, request model, and usage of custom validation decorators.
+- validators.py – Contains custom decorators to validate email, phone, and password input using regex, with logging.
+- db.py – Handles saving user data and validation logs into the PostgreSQL database using SQLAlchemy.
+- models.py – Defines SQLAlchemy ORM models for the users and logs tables.
+- database.py – Initializes the database engine, session factory, and base class for ORM models.
+- logger.py – (Now optional) Previously used for file-based logging; replaced with database logging logic.
+- log_utils.py – Contains logic to save validation logs into the database instead of writing to log files.
+- requirements.txt – Lists all the dependencies needed to install and run the project (e.g., FastAPI, SQLAlchemy, psycopg2).
