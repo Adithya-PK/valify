@@ -19,51 +19,53 @@ A FastAPI project with custom input validation (email, phone, password), Postgre
 
 3. **Install dependencies**
 
-4. **Create a PostgreSQL database**  
-   - Make sure this matches the connection string in `database.py`  
+4. **Create a PostgreSQL database**
 
-DATABASE_URL = "postgresql://postgres:root@localhost/fastapi_db"
+   Make sure this matches the connection string in `database.py`
 
+   ```
+   DATABASE_URL = "postgresql://postgres:root@localhost/fastapi_db"
+   ```
 
-5. **Run the application**  
+5. **Run the application**
 
-uvicorn main:app --reload
-
+   ```
+   uvicorn main:app --reload
+   ```
 
 ## Test the API
 
-1. Open your browser and go to  
+1. Open your browser and go to
 
-http://127.0.0.1:8000/docs
-
+   ```
+   http://127.0.0.1:8000/docs
+   ```
 
 2. Click on `/register` → **Try it out** → Enter sample data
 
-3. Click **Execute** — if all inputs are valid, the data will be saved to the database.
+3. Click **Execute** — if all inputs are valid, it will be saved to the database.
 
 ## How to Check Data
 
 1. **Users Table**
 
-SELECT * FROM users;
+   ```sql
+   SELECT * FROM users;
+   ```
 
-Validation & DB Logs Table
+2. **Validation & DB Logs Table**
 
-SELECT * FROM logs;
-File Structure (Quick Guide)
+   ```sql
+   SELECT * FROM logs;
+   ```
 
-main.py – App startup, route definitions, request model, and usage of custom validation decorators.
+## File Structure (Quick Guide)
 
-validators.py – Contains custom decorators to validate email, phone, and password input using regex, with logging.
-
-db.py – Handles saving user data and validation logs into the PostgreSQL database using SQLAlchemy.
-
-models.py – Defines SQLAlchemy ORM models for the users and logs tables.
-
-database.py – Initializes the database engine, session factory, and base class for ORM models.
-
-logger.py – (Optional) Previously used for file-based logging; replaced with database logging logic.
-
-log_utils.py – Contains logic to save validation logs into the database instead of writing to log files.
-
-requirements.txt – Lists all the dependencies needed to install and run the project (FastAPI, SQLAlchemy, psycopg2).
+- **main.py** – App startup, route definitions, request model, and usage of custom validation decorators.
+- **validators.py** – Contains custom decorators to validate email, phone, and password input using regex, with logging.
+- **db.py** – Handles saving user data and validation logs into the PostgreSQL database using SQLAlchemy.
+- **models.py** – Defines SQLAlchemy ORM models for the `users` and `logs` tables.
+- **database.py** – Initializes the database engine, session factory, and base class for ORM models.
+- **logger.py** – (Optional) Previously used for file-based logging; replaced with database logging logic.
+- **log_utils.py** – Contains logic to save validation logs into the database instead of writing to log files.
+- **requirements.txt** – Lists all the dependencies needed to install and run the project (FastAPI, SQLAlchemy, psycopg2).
